@@ -318,11 +318,11 @@ MoveRefAlien:
 ;
 01A1: 15              DEC     D                   ; This decrements with each call to move
 01A2: CA CD 01        JP      Z,$01CD             ; {ReturnTwo} Return out of TWO call frames (only used if no aliens left)
-01A5: 21 06 20        LD      HL,$2006            ; Set current alien ...
+01A5: 21 06 20        LD      HL,$2006            ; {alienCurIndex} Set current alien ...
 01A8: 36 00           LD      (HL),$00            ; ... index to 0
-01AA: 23              INC     HL                  ; Point to DeltaX
-01AB: 4E              LD      C,(HL)              ; Load DX into C
-01AC: 36 00           LD      (HL),$00            ; Set DX to 0
+01AA: 23              INC     HL                  ; Point to refAlienDYr
+01AB: 4E              LD      C,(HL)              ; Load DY into C
+01AC: 36 00           LD      (HL),$00            ; Set DY to 0
 01AE: CD D9 01        CALL    $01D9               ; {AddDelta} Move alien
 01B1: 21 05 20        LD      HL,$2005            ; Alien animation frame number
 01B4: 7E              LD      A,(HL)              ; Toggle ...
