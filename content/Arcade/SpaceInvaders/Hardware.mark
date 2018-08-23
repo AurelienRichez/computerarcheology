@@ -24,10 +24,11 @@ The mame/drivers/mw8080bw.c comments have the following information about the in
         one of its memory access control signals.
 }}}
 
-The value CF is RST 8 and D7 is RST 10.
+The value CF is RST 1 (which is equivalent to CALL $8) and D7 is RST 2 (which is 
+equivalent to CALL $10). 
 
-If I understand this right then the system gets RST 8 when the beam is *near* the middle of the screen and RST 10 
-when it is at the end (start of VBLANK).
+If I understand this right then the system gets RST 1  when the beam is *near* the middle 
+of the screen and RST 2  when it is at the end (start of VBLANK).
 
 # Video
 
